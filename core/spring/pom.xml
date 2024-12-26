@@ -117,18 +117,19 @@ under the License.
       <artifactId>spring-test</artifactId>
       <scope>test</scope>
     </dependency>
-    <dependency>
+    <!--<dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
       <scope>test</scope>
-    </dependency>
-   <!--- ADD
+    </dependency>-->
+   <!--- ADD -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
+      <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
-  -->
+
   </dependencies>
 
   <build>
@@ -199,7 +200,7 @@ under the License.
       </activation>
       <properties>
         <ba-dua.version>0.6.0</ba-dua.version>
-        <argLine>-javaagent:target/dependency/ba-dua-agent-rt-${ba-dua.version}-all.jar -Doutput.file=target/badua.ser</argLine>
+        <argLine>-Xms2G -Xmx4G -javaagent:target/dependency/ba-dua-agent-rt-${ba-dua.version}-all.jar -Doutput.file=target/badua.ser</argLine>
       </properties>
       <dependencies>
         <dependency>
@@ -284,13 +285,13 @@ under the License.
             <groupId>org.pitest</groupId>
             <artifactId>pitest-maven</artifactId>
             <version>1.15.2</version>
-            <dependencies>
+            <!--<dependencies>
               <dependency>
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-junit5-plugin</artifactId>
                 <version>1.2.1</version>
               </dependency>
-            </dependencies>
+            </dependencies>-->
             <configuration>
               <verbose>true</verbose>
               <targetClasses>
