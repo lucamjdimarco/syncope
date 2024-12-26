@@ -40,5 +40,6 @@ public class EncryptorTests {
 
         // Assert
         assertNotNull(encryptor, "Encryptor instance should not be null");
+        assertTrue(true);
     }
 }

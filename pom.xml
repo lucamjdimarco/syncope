@@ -1329,6 +1329,18 @@ under the License.
         <enabled>true</enabled>
       </snapshots>
     </repository>
+
+    <!-- BADUA -->
+    <!--<repository>
+      <id>central</id>
+      <url>https://repo.maven.apache.org/maven2</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>-->
   </repositories>
 
   <pluginRepositories>
