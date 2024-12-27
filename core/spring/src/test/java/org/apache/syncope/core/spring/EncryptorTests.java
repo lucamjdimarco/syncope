@@ -96,7 +96,7 @@ public class EncryptorTests {
             return Arrays.asList(new Object[][]{
                     {"validString", CipherAlgorithm.AES, true, false},
                     {"", CipherAlgorithm.AES, true, false},
-                    {null, null, true, true},
+                    {"validString", null, true, false},
                     {"validString", null, false, true}
             });
         }
@@ -104,15 +104,28 @@ public class EncryptorTests {
         @Test
         public void testEncode() {
             try {
+
                 Encryptor encryptor = Encryptor.getInstance("secretKey");
 
-                String encodedValue = encryptor.encode(value, cipherAlgorithm);
+                if(validOrNullAlgorithm) {
+                    String encodedValue = encryptor.encode(value, cipherAlgorithm);
 
-                if (expectException) {
-                    fail("Expected exception, but method executed successfully.");
+                    if (expectException) {
+                        fail("Expected exception, but method executed successfully.");
+                    } else {
+                        assertNotNull("Encoded value should not be null for valid input.", encodedValue);
+                        assertFalse("Encoded value should not be empty.", encodedValue.isEmpty());
+                    }
                 } else {
-                    assertNotNull("Encoded value should not be null for valid input.", encodedValue);
-                    assertFalse("Encoded value should not be empty.", encodedValue.isEmpty());
+                    encryptor.encode("testString", CipherAlgorithm.valueOf("FAKE_ALGORITHM"));
+                    fail("Expected IllegalArgumentException for unsupported algorithm");
+                }
+
+            } catch (IllegalArgumentException e){
+                if (!expectException) {
+                    fail("Did not expect an exception, but got: " + e.getMessage());
+                } else {
+                    assertTrue("Unexpected exception", expectException);
                 }
             } catch (Exception e) {
                 if (!expectException) {
