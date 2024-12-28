@@ -32,6 +32,19 @@ under the License.
   <groupId>org.apache.syncope.core</groupId>
   <artifactId>syncope-core-spring</artifactId>
   <packaging>jar</packaging>
+
+  <!--<repositories>
+    <repository>
+      <id>local-repo</id>
+      <url>file://${user.home}/.m2/repository</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>-->
   
   <properties>
     <rootpom.basedir>${basedir}/../..</rootpom.basedir>
@@ -148,6 +161,12 @@ under the License.
       <version>4.11.0</version>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>org.jasypt</groupId>
+      <artifactId>jasypt</artifactId>
+      <version>1.9.0</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -218,13 +237,14 @@ under the License.
       </activation>
       <properties>
         <ba-dua.version>0.6.0</ba-dua.version>
-        <argLine>-Xms2G -Xmx4G -javaagent:target/dependency/ba-dua-agent-rt-${ba-dua.version}-all.jar -Doutput.file=target/badua.ser</argLine>
+        <argLine>-Xms1G -Xmx2G -javaagent:target/dependency/ba-dua-agent-rt-${ba-dua.version}-all.jar -Doutput.file=target/badua.ser</argLine>
       </properties>
       <dependencies>
         <dependency>
           <groupId>br.usp.each.saeg</groupId>
           <artifactId>ba-dua-cli</artifactId>
           <version>${ba-dua.version}</version>
+          <classifier>all</classifier>
         </dependency>
       </dependencies>
       <build>
