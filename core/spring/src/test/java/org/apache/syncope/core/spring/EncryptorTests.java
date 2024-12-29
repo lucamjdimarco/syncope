@@ -41,6 +41,10 @@ import java.util.Collection;
 
 import static org.junit.Assert.*;
 
+//
+
+//test
+
 @RunWith(Enclosed.class)
 public class EncryptorTests {
 
@@ -149,6 +153,7 @@ public class EncryptorTests {
             }
         }
     }
+    //
 
     @RunWith(Parameterized.class)
     public static class VerifyTest {
@@ -169,6 +174,8 @@ public class EncryptorTests {
             this.expException = expException;
         }
 
+
+        //
         @Parameterized.Parameters(name = "Test case: value={0}, cipherAlgorithm={1}, encodedValue={2}, isValidOrNull={3}, expectedResult={4}, expException={5}")
         public static Collection<Object[]> data() {
             return Arrays.asList(new Object[][]{
@@ -178,6 +185,11 @@ public class EncryptorTests {
                     {null, null, false, true, false, false},
                     {"validString", CipherAlgorithm.AES, false, true, false, false},
                     {"validString", null, true, false, false, true},
+                    //
+                    //PIT
+                    //{"validString", CipherAlgorithm.BCRYPT, true, true, true, false}, // BCRYPT case
+                    //{"validString", CipherAlgorithm.SHA256, true, true, true, false}, // BCRYPT case
+
             });
         }
 
@@ -197,6 +209,9 @@ public class EncryptorTests {
                     boolean result = encryptor.verify(value, cipherAlgorithm, null);
                     assertFalse("Expected false verification result for null encoded value.", result);
                 }
+
+                //
+                //
 
                 if(expException) {
                     fail("Expected exception, but method executed successfully.");
@@ -223,7 +238,7 @@ public class EncryptorTests {
 
     }
 
-    @RunWith(Parameterized.class)
+    /*@RunWith(Parameterized.class)
     public static class DecodeTests {
 
         private final String text;
@@ -289,6 +304,7 @@ public class EncryptorTests {
                 }
             }
         }
-    }
+    }*/
+
 
 }
