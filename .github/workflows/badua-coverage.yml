@@ -3,10 +3,8 @@ name: Build and Test with Badua
 on:
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
+      - master
+
 
 jobs:
   build:
