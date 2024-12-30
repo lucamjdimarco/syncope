@@ -197,7 +197,7 @@ under the License.
   </build>
 
   <profiles>
-    <!--<profile>
+    <profile>
       <id>jacoco</id>
       <activation>
         <activeByDefault>false</activeByDefault>
@@ -228,7 +228,7 @@ under the License.
           </plugin>
         </plugins>
       </build>
-    </profile>-->
+    </profile>
 
     <profile>
       <id>badua-coverage</id>
@@ -333,10 +333,12 @@ under the License.
             <configuration>
               <verbose>true</verbose>
               <targetClasses>
-                <param>org.apache.syncope.core.spring.security.Encryptor</param>
+                <!--<param>org.apache.syncope.core.spring.security.Encryptor</param>-->
+                <param>org.apache.syncope.core.spring.policy.DefaultPasswordRule</param>
               </targetClasses>
               <targetTests>
-                <param>org.apache.syncope.core.spring.EncryptorTests</param>
+                <!--<param>org.apache.syncope.core.spring.EncryptorTests</param>-->
+                <param>org.apache.syncope.core.spring.DefaultPasswordRuleTests</param>
               </targetTests>
             </configuration>
             <executions>
