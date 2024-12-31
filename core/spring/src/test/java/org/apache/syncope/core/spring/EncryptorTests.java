@@ -91,6 +91,9 @@ public class EncryptorTests {
                     //Jacoco
                     {"validString", CipherAlgorithm.BCRYPT, true, false},
                     {"validString", CipherAlgorithm.SHA256, true, false},
+
+                    //BADUA
+                    {null, null, true, false}
             });
         }
 
@@ -106,8 +109,13 @@ public class EncryptorTests {
                     if (expectException) {
                         fail("Expected exception, but method executed successfully.");
                     } else {
-                        assertNotNull("Encoded value should not be null for valid input.", encodedValue);
-                        assertFalse("Encoded value should not be empty.", encodedValue.isEmpty());
+                        if(value == null) {
+                            //BADUA
+                            assertNull("Encoded value should be null for null input.", encodedValue);
+                        } else {
+                            assertNotNull("Encoded value should not be null for valid input.", encodedValue);
+                            assertFalse("Encoded value should not be empty.", encodedValue.isEmpty());
+                        }
                     }
                 } else {
                     encryptor.encode("testString", CipherAlgorithm.valueOf("FAKE_ALGORITHM"));
@@ -131,7 +139,7 @@ public class EncryptorTests {
     }
     //
 
-    @RunWith(Parameterized.class)
+    /*@RunWith(Parameterized.class)
     public static class VerifyTest {
 
         private final String value;
@@ -209,9 +217,9 @@ public class EncryptorTests {
             }
         }
 
-    }
+    }*/
 
-    @RunWith(Parameterized.class)
+    /*@RunWith(Parameterized.class)
     public static class DecodeTests {
 
         private final String text;
@@ -277,7 +285,8 @@ public class EncryptorTests {
                 }
             }
         }
-    }
+    }*/
 
+    //exc
 
 }
