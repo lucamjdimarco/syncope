@@ -237,7 +237,8 @@ under the License.
       </activation>
       <properties>
         <ba-dua.version>0.6.0</ba-dua.version>
-        <argLine>-Xms1G -Xmx2G -javaagent:target/dependency/ba-dua-agent-rt-${ba-dua.version}-all.jar -Doutput.file=target/badua.ser</argLine>
+        <!--<argLine>-Xms1G -Xmx2G -javaagent:target/dependency/ba-dua-agent-rt-${ba-dua.version}-all.jar -Doutput.file=target/badua.ser</argLine>-->
+        <argLine>-javaagent:target/dependency/ba-dua-agent-rt-${ba-dua.version}-all.jar -Doutput.file=target/badua.ser</argLine>
       </properties>
       <dependencies>
         <dependency>

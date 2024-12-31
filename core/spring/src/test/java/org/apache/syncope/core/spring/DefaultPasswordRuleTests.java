@@ -13,11 +13,9 @@ import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import java.util.Properties;
 
 import org.apache.syncope.core.spring.utils.ConcreteUser;
 
@@ -71,28 +69,11 @@ public class DefaultPasswordRuleTests {
             invalidConf2.getIllegalChars().add('@');
 
 
-            /* PIT */
-            /*DefaultPasswordRuleConf minLengthNegative = new DefaultPasswordRuleConf();
-            minLengthNegative.setMinLength(-1); // minLength negativo
-            minLengthNegative.setMaxLength(10);
-            DefaultPasswordRuleConf zeroMinLengthConf = new DefaultPasswordRuleConf();
-            zeroMinLengthConf.setMinLength(0);
-            zeroMinLengthConf.setMaxLength(10);*/
-
-            //DefaultPasswordRuleConf nullElementIllegalChars = new DefaultPasswordRuleConf();
-            //nullElementIllegalChars.getIllegalChars().add(null);
-
-
             return Arrays.asList(new Object[][]{
                     {validConf, false},
                     {invalidConf1, false}, //true
                     {invalidConf2, false}, //true
                     {null, true},
-
-                    //PIT non funziona
-                    //{minLengthNegative, false},
-                    //{zeroMinLengthConf, false},
-                    //{nullElementIllegalChars, true}
             });
         }
 
