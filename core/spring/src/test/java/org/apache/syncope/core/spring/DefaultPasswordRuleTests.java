@@ -234,7 +234,7 @@ public class DefaultPasswordRuleTests {
 
             ConcreteUser nullUser = new ConcreteUser();
 
-            // BADUA caso in cui la password viola i criteri di validazione
+            // BADUA caso in cui la password viola i criteri di validazione <--------
             DefaultPasswordRuleConf invalidValidationConf = new DefaultPasswordRuleConf();
             invalidValidationConf.setMinLength(15); //password troppo corta per rispettare il criterio
             ConcreteUser shortPasswordUser = new ConcreteUser();
@@ -242,7 +242,7 @@ public class DefaultPasswordRuleTests {
             shortPasswordUser.setPassword("Short1!");
             shortPasswordUser.setClearPassword("Short1!");
 
-            // BADUA caso in cui username è null
+            // BADUA caso in cui username è null <--------
             ConcreteUser nullUsernameUser = new ConcreteUser();
             nullUsernameUser.setUsername(null);
             nullUsernameUser.setPassword("SecurePass!123");
@@ -256,7 +256,7 @@ public class DefaultPasswordRuleTests {
                     //jacoco
                     {nullUser, validConf, false},
 
-                    //BADUA
+                    //BADUA <--------
                     {shortPasswordUser, invalidValidationConf, true}, // test per ramo `!result.isValid()`
                     {nullUsernameUser, validConf, false} // test per `username == null`
             });

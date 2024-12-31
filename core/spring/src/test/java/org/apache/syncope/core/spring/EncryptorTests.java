@@ -92,7 +92,7 @@ public class EncryptorTests {
                     {"validString", CipherAlgorithm.BCRYPT, true, false},
                     {"validString", CipherAlgorithm.SHA256, true, false},
 
-                    //BADUA
+                    //BADUA <------------
                     {null, null, true, false}
             });
         }
@@ -110,7 +110,7 @@ public class EncryptorTests {
                         fail("Expected exception, but method executed successfully.");
                     } else {
                         if(value == null) {
-                            //BADUA
+                            //BADUA <------------
                             assertNull("Encoded value should be null for null input.", encodedValue);
                         } else {
                             assertNotNull("Encoded value should not be null for valid input.", encodedValue);
@@ -139,7 +139,7 @@ public class EncryptorTests {
     }
     //
 
-    /*@RunWith(Parameterized.class)
+    @RunWith(Parameterized.class)
     public static class VerifyTest {
 
         private final String value;
@@ -217,9 +217,9 @@ public class EncryptorTests {
             }
         }
 
-    }*/
+    }
 
-    /*@RunWith(Parameterized.class)
+    @RunWith(Parameterized.class)
     public static class DecodeTests {
 
         private final String text;
@@ -285,7 +285,7 @@ public class EncryptorTests {
                 }
             }
         }
-    }*/
+    }
 
     //exc
 
