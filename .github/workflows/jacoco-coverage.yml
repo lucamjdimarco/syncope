@@ -1,0 +1,50 @@
+name: Jacoco coverage Workflow
+
+on:
+  push:
+    branches:
+      - master
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout del codice
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Imposta il JDK 21
+    - name: Setup JDK 21
+      uses: actions/setup-java@v3
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+
+    # Esporta MAVEN_OPTS
+    - name: Set MAVEN_OPTS
+      run: echo "MAVEN_OPTS=-Xms1G -Xmx2G" >> $GITHUB_ENV
+
+    # Esegui mvn clean install in ./
+    - name: Maven build in root directory
+      run: |
+        mvn clean install -U -Dcheckstyle.skip=true -Drat.skip=true
+
+    # Esegui mvn clean install in ./core
+    - name: Maven build in ./core
+      run: |
+        cd core
+        mvn clean install -U -Dcheckstyle.skip=true -Drat.skip=true
+
+    # Esegui mvn clean install in ./core/spring
+    - name: Maven build in ./core/spring
+      run: |
+        cd core
+        cd spring
+        mvn clean install -U -Dcheckstyle.skip=true -Drat.skip=true
+
+    # Esegui mvn verify con il profilo jacoco
+    - name: Run tests with Jacoco
+      run: |
+        mvn -B verify -Pjacoco -Dcheckstyle.skip=true -Drat.skip=true
