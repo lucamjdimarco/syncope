@@ -1,0 +1,43 @@
+name: Maven PIT Coverage Workflow
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+  
+    - name: Setup JDK 21
+      uses: actions/setup-java@v3
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+
+    - name: Set MAVEN_OPTS
+      run: echo "MAVEN_OPTS=-Xms1G -Xmx2G" >> $GITHUB_ENV
+
+    - name: Maven build in root directory
+      run: |
+        mvn clean install -U -Dcheckstyle.skip=true -Drat.skip=true
+
+    - name: Maven build in ./core
+      run: |
+        cd core
+        mvn clean install -U -Dcheckstyle.skip=true -Drat.skip=true
+
+    - name: Maven build in ./core/spring
+      run: |
+        cd core
+        cd spring
+        mvn clean install -U -Dcheckstyle.skip=true -Drat.skip=true
+
+    - name: Run PIT mutation coverage
+      run: |
+        mvn -B verify -Pmutation-coverage -Drat.skip=true
