@@ -1059,7 +1059,7 @@ under the License.
       <!-- /CAS -->
 
       <!-- Wicket -->
-      <dependency>
+      <!--<dependency>
         <groupId>org.apache.wicket</groupId>
         <artifactId>wicket</artifactId>
         <version>${wicket.version}</version>
@@ -1138,7 +1138,7 @@ under the License.
             <artifactId>momentjs</artifactId>
           </exclusion>
         </exclusions>
-      </dependency>
+      </dependency>-->
       <!-- /Wicket -->
 
       <dependency>
