@@ -441,7 +441,8 @@ under the License.
 
     <!-- MODIFICA PER GITHUB ACTIONS -->
     <!--<pac4j.version>6.0.0-RC6-SNAPSHOT</pac4j.version>-->
-    <pac4j.version>6.1.0</pac4j.version>
+    <pac4j.version>6.0.0</pac4j.version>
+    <!-- MODIFICA PER GITHUB ACTIONS -->
 
     <cas.version>7.0.0-RC5</cas.version>
     <cas-client.version>4.0.1</cas-client.version>
@@ -462,7 +463,7 @@ under the License.
     <jsplumb.version>2.0.7</jsplumb.version>
     <chartjs.version>1.0.2</chartjs.version>
 
-    <!-- MODIFICA DI WICKET -->
+    <!-- MODIFICA DI WICKET PER GITHUB ACTIONS -->
     <!--<wicket.version>10.0.0-M1-SNAPSHOT</wicket.version>
     <wicketstuff.version>10.0.0-SNAPSHOT</wicketstuff.version>
     <wicket-jqueryui.version>10.0.0-SNAPSHOT</wicket-jqueryui.version>
