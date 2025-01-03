@@ -39,7 +39,6 @@ jobs:
 
     - name: Maven build in ./core/spring
       run: |
-        cd core
         cd spring
         mvn clean install -U -Dcheckstyle.skip=true -Drat.skip=true
 
