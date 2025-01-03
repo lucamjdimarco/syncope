@@ -24,11 +24,16 @@ jobs:
     - name: Set MAVEN_OPTS
       run: echo "MAVEN_OPTS=-Xms1G -Xmx2G" >> $GITHUB_ENV
 
-    - name: Maven build in root directory
-      run: mvn clean install -U -Dcheckstyle.skip=true -Drat.skip=true
+    #- name: Maven build in root directory
+    #  run: mvn clean install -U -Dcheckstyle.skip=true -Drat.skip=true
+    - name: Maven build in ./common
+      run: |
+        cd common
+        mvn clean install -U -Dcheckstyle.skip=true -Drat.skip=true
       
     - name: Maven build in ./core
       run: |
+        cd ..
         cd core
         mvn clean install -U -Dcheckstyle.skip=true -Drat.skip=true
 
