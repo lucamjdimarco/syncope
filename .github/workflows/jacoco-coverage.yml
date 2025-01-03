@@ -33,7 +33,6 @@ jobs:
 
     - name: Maven build in ./client
       run: |
-        cd ..
         cd client
         mvn clean install -U -Dcheckstyle.skip=true -Drat.skip=true
 
