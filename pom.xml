@@ -457,11 +457,19 @@ under the License.
     <jsplumb.version>2.0.7</jsplumb.version>
     <chartjs.version>1.0.2</chartjs.version>
 
-    <wicket.version>10.0.0-M1-SNAPSHOT</wicket.version>
+    <!-- MODIFICA DI WICKET -->
+    <!--<wicket.version>10.0.0-M1-SNAPSHOT</wicket.version>
     <wicketstuff.version>10.0.0-SNAPSHOT</wicketstuff.version>
     <wicket-jqueryui.version>10.0.0-SNAPSHOT</wicket-jqueryui.version>
     <wicket-bootstrap.version>7.0.0-SNAPSHOT</wicket-bootstrap.version>
-    <wicket-spring-boot.version>4.0.0-SNAPSHOT</wicket-spring-boot.version>
+    <wicket-spring-boot.version>4.0.0-SNAPSHOT</wicket-spring-boot.version>-->
+
+    <wicket.version>9.9.0</wicket.version>
+    <wicketstuff.version>9.8.0</wicketstuff.version>
+    <wicket-jqueryui.version>9.8.0</wicket-jqueryui.version>
+    <wicket-bootstrap.version>5.0.6</wicket-bootstrap.version>
+    <wicket-spring-boot.version>3.1.6</wicket-spring-boot.version>
+    <!-- MODIFICA DI WICKET -->
 
     <antlr4.version>4.12.0</antlr4.version>
 
@@ -2032,7 +2040,10 @@ under the License.
             <link>http://fasterxml.github.io/jackson-dataformat-xml/javadoc/2.14/</link>
             <link>http://fasterxml.github.io/jackson-dataformats-text/javadoc/yaml/2.14/</link>
             <link>http://fasterxml.github.io/jackson-dataformats-text/javadoc/csv/2.14/</link>
-            <link>https://ci.apache.org/projects/wicket/apidocs/10.x/</link>
+            <!-- MODIFICA DI WICKET -->
+            <!--<link>https://ci.apache.org/projects/wicket/apidocs/10.x/</link>-->
+            <link>https://ci.apache.org/projects/wicket/apidocs/9.x/</link>
+            <!-- MODIFICA DI WICKET -->
             <link>https://commons.apache.org/proper/commons-lang/javadocs/api-release/</link>
             <link>https://commons.apache.org/proper/commons-jexl/apidocs/</link>
             <link>https://tika.apache.org/2.7.0/api/</link>

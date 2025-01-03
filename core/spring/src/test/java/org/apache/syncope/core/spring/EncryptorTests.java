@@ -171,7 +171,7 @@ public class EncryptorTests {
                     {"validString", null, true, false, false, true},
                     //PIT
                     {"validString", CipherAlgorithm.BCRYPT, true, true, true, false}, // BCRYPT case
-                    {"validString", CipherAlgorithm.SHA256, true, true, true, false}, // BCRYPT case
+                    {"validString", CipherAlgorithm.SHA256, true, true, true, false}, // SHA256 case
 
             });
         }
