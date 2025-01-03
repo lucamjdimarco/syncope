@@ -441,7 +441,7 @@ under the License.
 
     <!-- MODIFICA PER GITHUB ACTIONS -->
     <!--<pac4j.version>6.0.0-RC6-SNAPSHOT</pac4j.version>-->
-    <pac4j.version>5.3.1</pac4j.version>
+    <pac4j.version>6.0.0</pac4j.version>
     <!-- MODIFICA PER GITHUB ACTIONS -->
 
     <cas.version>7.0.0-RC5</cas.version>
