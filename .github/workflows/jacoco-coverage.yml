@@ -26,15 +26,23 @@ jobs:
 
     #- name: Maven build in root directory
     #  run: mvn clean install -U -Dcheckstyle.skip=true -Drat.skip=true
-    - name: Maven build in ./common
-      run: |
-        cd common
-        mvn clean install -U -Dcheckstyle.skip=true -Drat.skip=true
+    #- name: Maven build in ./common
+    #  run: |
+    #    cd common
+    #    mvn clean install -U -Dcheckstyle.skip=true -Drat.skip=true
       
-    - name: Maven build in ./core
+    #- name: Maven build in ./core
+    #  run: |
+    #    cd core
+    #    mvn clean install -U -Dcheckstyle.skip=true -Drat.skip=true
+
+    - name: Build dependencies for syncope-core-spring
       run: |
-        cd core
-        mvn clean install -U -Dcheckstyle.skip=true -Drat.skip=true
+        mvn clean install -U common/idrepo-lib -DskipTests -Dcheckstyle.skip=true -Drat.skip=true
+        mvn clean install -U core/provisioning-api -DskipTests -Dcheckstyle.skip=true -Drat.skip=true
+        mvn clean install -U common/idm-rest-api -DskipTests -Dcheckstyle.skip=true -Drat.skip=true
+        mvn clean install -U common/am-rest-api -DskipTests -Dcheckstyle.skip=true -Drat.skip=true
+        mvn clean install -U common/keymaster-client-api -DskipTests -Dcheckstyle.skip=true -Drat.skip=true
 
     - name: Maven build in ./core/spring
       run: |
