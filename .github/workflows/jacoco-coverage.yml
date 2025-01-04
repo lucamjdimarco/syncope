@@ -31,14 +31,14 @@ jobs:
         cd common
         mvn clean install -U -Dcheckstyle.skip=true -Drat.skip=true
       
-    - name: Maven build in ./core/persistence-api
-      run: |
-        mvn clean install -pl core/persistence-api -U -DskipTests -Dcheckstyle.skip=true -Drat.skip=true
+    #- name: Maven build in ./core/persistence-api
+    #  run: |
+    #    mvn clean install -pl core/persistence-api -U -DskipTests -Dcheckstyle.skip=true -Drat.skip=true
 
     # Costruisci il modulo core
     - name: Maven build in ./core
       run: |
-        mvn clean install -pl core -U -DskipTests -Dcheckstyle.skip=true -Drat.skip=true
+        mvn clean install -U -Dcheckstyle.skip=true -Drat.skip=true
 
     # Costruisci il modulo core/spring
     - name: Maven build in ./core/spring
