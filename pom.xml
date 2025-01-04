@@ -472,7 +472,7 @@ under the License.
     <wicket-jqueryui.version>9.8.0</wicket-jqueryui.version>
     <wicket-bootstrap.version>5.0.6</wicket-bootstrap.version>
     <wicket-spring-boot.version>3.1.6</wicket-spring-boot.version>
-    <!-- MODIFICA DI WICKET -->
+    <!-- MODIFICA DI WICKET PER GITHUB ACTIONS -->
 
     <antlr4.version>4.12.0</antlr4.version>
 
