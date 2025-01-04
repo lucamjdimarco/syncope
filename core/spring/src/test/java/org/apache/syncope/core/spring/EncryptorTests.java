@@ -24,7 +24,7 @@ import static org.junit.Assert.*;
 @RunWith(Enclosed.class)
 public class EncryptorTests {
 
-    /*@RunWith(Parameterized.class)
+    @RunWith(Parameterized.class)
     public static class GetInstanceTest {
 
         private final String secretKey;
@@ -285,8 +285,6 @@ public class EncryptorTests {
                 }
             }
         }
-    }*/
-
-    //exc
+    }
 
 }
