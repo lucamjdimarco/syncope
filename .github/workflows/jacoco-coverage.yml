@@ -31,15 +31,19 @@ jobs:
         cd common
         mvn clean install -U -Dcheckstyle.skip=true -Drat.skip=true
       
+    - name: Maven build in ./core/persistence-api
+      run: |
+        mvn clean install -pl core/persistence-api -U -DskipTests -Dcheckstyle.skip=true -Drat.skip=true
+
+    # Costruisci il modulo core
     - name: Maven build in ./core
       run: |
-        cd core
-        mvn clean install -U -Dcheckstyle.skip=true -Drat.skip=true
+        mvn clean install -pl core -U -DskipTests -Dcheckstyle.skip=true -Drat.skip=true
 
+    # Costruisci il modulo core/spring
     - name: Maven build in ./core/spring
       run: |
-        cd core/spring
-        mvn clean install -U -Dcheckstyle.skip=true -Drat.skip=true
+        mvn clean install -pl core/spring -U -DskipTests -Dcheckstyle.skip=true -Drat.skip=true
 
     - name: Run tests with Jacoco
       run: |
