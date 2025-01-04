@@ -414,8 +414,10 @@ under the License.
     <connid.okta.version>3.0.0</connid.okta.version>
     <connid.cmd.version>0.5</connid.cmd.version>
 
-    <cxf.version>4.0.1-SNAPSHOT</cxf.version>
-    <!--<cxf.version>4.0.2</cxf.version>-->
+    <!-- MODIFICA PER GITHUB ACTIONS -->
+    <!--<cxf.version>4.0.1-SNAPSHOT</cxf.version>-->
+    <cxf.version>4.0.1</cxf.version>
+    <!-- MODIFICA PER GITHUB ACTIONS -->
     <bouncycastle.version>1.72</bouncycastle.version>
     <nimbus-jose-jwt.version>9.31</nimbus-jose-jwt.version>
 
