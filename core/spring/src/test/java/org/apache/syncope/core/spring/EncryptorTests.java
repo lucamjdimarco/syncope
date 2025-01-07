@@ -65,7 +65,7 @@ public class EncryptorTests {
         }
     }
 
-    /*@RunWith(Parameterized.class)
+    @RunWith(Parameterized.class)
     public static class EncodeTest {
 
         private final String value;
@@ -217,7 +217,7 @@ public class EncryptorTests {
             }
         }
 
-    }*/
+    }
 
     @RunWith(Parameterized.class)
     public static class DecodeTests {
