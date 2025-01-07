@@ -76,6 +76,7 @@ jobs:
 
     - name: Run Badua coverage
       run: |
+        cd core/spring
         mvn -B verify -Pbadua-coverage -Dcheckstyle.skip=true -Drat.skip=true
 
     - name: Upload Badua XML report
